@@ -8,7 +8,7 @@
 
 #root {
   --display-font: "Barlow Condensed", sans-serif;
-  height: 100vh;
+min-height: 100vh;
   display: grid;
   align-content: space-evenly;
   gap: 1.5rem;
