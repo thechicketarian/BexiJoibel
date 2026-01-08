@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 //components
@@ -7,14 +8,9 @@ import Footer from "./components/Footer";
 
 //pages
 import About from "./pages/About/index";
-// import Contact from "./pages/Contact/index";
-// import Design from "./pages/Design/index";
-// import Development from "./pages/Development/index";
-import Resume from "./pages/Resume/index"
 import Home from "./pages/Home/index";
-// import Bootcampers from './pages/Development/bootcampers';
-
-//pages
+import Projects from "./pages/Projects/Projects.jsx"
+import  ProjectPage from './pages/Projects/ProjectPage.jsx';
 
 //css
 import './App.css';
@@ -22,23 +18,40 @@ import './index.css';
 
 function App() {
 
+useEffect(() => {
+  console.log(String.raw`
+       ___-------___
+   _-~~             ~~-_
+_-~                     ~-_
+/                           \
+|   ____               ____   |
+|  / __ \   Turtle    / __ \  |
+| | /  \ |  Mode On  | /  \ | |
+| | \__/ |           | \__/ | |
+|  \____/             \____/  |
+ \                           /
+  ~-_                   _-~
+     ~--___       ___--~
+           -----~
+
+bx/flo
+Engineering × Design × Art
+Powered by arroz, plátano, y pollo frito
+  `);
+}, []);
+
+
   return (
     <BrowserRouter> 
     <Header/>
     <Routes> 
     <Route path="/" element={<Home/>}/>
     <Route path="/about" element={<About/>}/>
-    {/* <Route path="/design" element={<Design/>}/> */}
-    {/* <Route path="/dev" element={<Development/>}>
-      <Route path="bootcampers" element={<Bootcampers/>}/>
-    </Route> */}
-    {/* <Route path="bootcampers" element={<Bootcampers/>}/> */}
-    {/* <Route path="/contact" element={<Contact/>}/> */}
-    <Route path="/resume" element={<Resume/>}/>
+     <Route path="/projects" element={<Projects/>}/>
+    <Route path="/projects/:slug" element={<ProjectPage/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>
-
   )
 }
 

@@ -1,8 +1,8 @@
 import React from "react";
 import {Link } from "react-router-dom"
 import { useLocation } from "react-router-dom";
-import logo from '../images/bjlogo.svg'
-import ResumeFile from "../images/BexiResume.pdf";
+import logo from '../images/bxflo_acro_logo.jpg'
+// import ResumeFile from "../images/BexiResume.pdf";
 
 function Header() {
 
@@ -12,18 +12,16 @@ function Header() {
     if (pathname === "/" ) return null;
 
   return (
-    <nav className="container nav">
-        {/* <div className="logo"> <Link to ="/"> <span role="img" aria-label="hen">🐔</span> Bexi Joibel </Link> </div> */}
-        <div className="logo"> <Link to ="/">   <img className="bjlogo"src={logo} alt="bexi"/></Link> </div>
-      
+    <nav className="nav">
+      <div className="innerNav">
+
         <div className="navLinks">
+          <div className="logo"> <Link to ="/">   <img src={logo} alt="bexi"/></Link> </div>
           <Link to ="about"> About</Link>
-          {/* <Link to ="design">Design</Link> */}
-          {/* <Link to ="dev">Dev</Link> */}
-          {/* <Link to ="resume">Resume</Link> */}
-          <a className = "resumeDownload" href={ResumeFile}  target="_blank" rel="noopener noreferrer"> Resume</a>
-          {/* <Link to ="contact">Contact</Link> */}
+           <Link to ="projects">Projects</Link>
+          {/* <a className = "resumeDownload" href={ResumeFile}  target="_blank" rel="noopener noreferrer">Resume</a> */}
         </div>
+      </div>
     </nav>
   );
 }
