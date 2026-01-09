@@ -1,10 +1,9 @@
 import { useLocation } from "react-router-dom";
 
-
 function Footer() {
   //hides footer on the homepage
   const { pathname } = useLocation();
-  console.log(pathname);
+  // console.log(pathname);
   if (pathname === "/" ) return null;
 
   const { DateTime } = require("luxon");

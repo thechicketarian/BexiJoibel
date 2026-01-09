@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 export const ProjectCard = ({ project }) => {
   return (
     <div
+    className="project-card"
       style={{
-        // border: "1px solid #1e1e1e",
+        border: "1px solid #1e1e1e",
         // borderRadius: "12px",
-        padding: "1rem 0",
-        // background: "#121212",
+        padding: "1.5rem 2rem",
+        background: "#121212",
         color: "#f5f5f5",
         display: "flex",
         flexDirection: "column",
@@ -38,7 +39,7 @@ export const ProjectCard = ({ project }) => {
           fontWeight: 600,
         }}
       >
-        Explore →
+        learn more <span className="wiggle-star" style={{color:"#c3ff00"}}>→</span> 
       </Link>
     </div>
   );

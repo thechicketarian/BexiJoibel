@@ -1,0 +1,15 @@
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: .5rem;
+}
+
+@media only screen and (max-width: 915px) {
+
+    .project {
+        grid-template-columns: 1fr;
+    }
+.header {
+    grid-template-columns: 1fr;
+}
+}

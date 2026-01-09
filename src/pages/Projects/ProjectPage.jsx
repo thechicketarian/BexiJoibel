@@ -1,60 +1,56 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
 import { projects } from "../../data/projects";
+import "./ProjectPage.css";
 
 export const ProjectPage = () => {
   const { slug } = useParams();
+  const { hash } = useLocation();   // <-- HOOKS MUST BE AT THE TOP
+
   const project = projects.find((p) => p.slug === slug);
 
-  if (!project) return <div>Project not found.</div>;
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
+
+  if (!project) return <div>Project not found.</div>; // <-- SAFE NOW
 
   return (
-    <div className="container" style={{ padding: "3rem", color: "#f5f5f5" }}>
+    <div className="container">
       <h2>{project.title}</h2>
-      <p style={{ maxWidth: "800px" }}>{project.longDescription}</p>
-      {/* Links */}
-      <div style={{ marginTop: "2rem", display: "flex", gap: "1rem", marginBottom:"1rem" }}>
+      <div className="project-links">
         {project.links.map((link, i) => (
-          <a
-            key={i}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: "0.5rem 1.25rem",
-              border: "1px solid #fff",
-              color: "#fff",
-              fontWeight: 600,
-            }}
-          >
+          <a key={i} href={link.url} target="_blank" rel="noopener noreferrer">
             {link.label}
           </a>
         ))}
       </div>
+
+      <h2>Behind the Build</h2>
+      <div
+        className="project-description"
+        dangerouslySetInnerHTML={{ __html: project.longDescription }}
+      />
+
       {project.embed && (
         <div
           className="project-embed"
           dangerouslySetInnerHTML={{ __html: project.embed }}
         />
       )}
-      {/* Images */}
-      <div style={{ marginTop: "2rem", display: "flex", gap: "1rem" }}>
+
+      <div className="project-images">
         {project.images.map((img, i) => (
-          <div style={{ width: "400px" }}>
-            <img
-              key={i}
-              src={img}
-              alt=""
-              style={{
-                width: "100%",
-                borderRadius: "8px",
-                objectFit: "cover",
-              }}
-            />
-          </div>
+          <img key={i} src={img} alt="" />
         ))}
       </div>
     </div>
   );
 };
+
 export default ProjectPage;

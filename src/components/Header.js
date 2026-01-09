@@ -8,13 +8,12 @@ function Header() {
 
     //hides header on the homepage
     const { pathname } = useLocation();
-    console.log(pathname);
+    // console.log(pathname);
     if (pathname === "/" ) return null;
 
   return (
     <nav className="nav">
       <div className="innerNav">
-
         <div className="navLinks">
           <div className="logo"> <Link to ="/">   <img src={logo} alt="bexi"/></Link> </div>
           <Link to ="about"> About</Link>

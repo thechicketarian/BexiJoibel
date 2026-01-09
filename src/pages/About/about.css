@@ -2,22 +2,12 @@
 
 .aboutContainer {
   display: grid;
-  /* align-items: center; */
   grid-template-columns: 1fr 1fr;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-@media only screen and (max-width: 915px) {
+@media only screen and (max-width: 768px) {
   .aboutContainer {
     grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .copy {
-    padding: 0 1.5rem;
-  }
-  .console {
-    padding: 1.5rem;
   }
 }

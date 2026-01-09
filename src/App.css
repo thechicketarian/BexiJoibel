@@ -8,17 +8,22 @@
 
 #root {
   --display-font: "Barlow Condensed", sans-serif;
-min-height: 100vh;
-  display: grid;
-  align-content: space-evenly;
-  gap: 1.5rem;
   color: #fff;
   background-color: #000;
 }
 
-.container {
-  width: 1200px;
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+        max-width: 1200px;
+  padding: 0 1.5rem;
   margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.content {
+  flex: 1;
 }
 
 span {
@@ -50,17 +55,21 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 3rem;
+  line-height: 3rem;
   font-weight: 700;
 }
 
 h3 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+h4{
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
 
-h4,
 a {
   font-size: 1rem;
   line-height: 1rem;
@@ -90,8 +99,8 @@ a:hover {
 }
 .navLinks a {
   font-weight: 700;
-    font-size: 1.25rem;
-  line-height: 1.25rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
 }
 
 .nav {
@@ -99,12 +108,6 @@ a:hover {
   padding-top: 1.5rem;
   flex-direction: row;
   align-items: center;
-}
-
-.innerNav {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .logo {
@@ -130,32 +133,15 @@ footer {
 }
 
 @media only screen and (max-width: 915px) {
-  main {
-    margin: 35px;
-  }
-
-  .container {
-    width: inherit;
-    padding: 1.5rem;
-        margin: unset;
-  }
 
   .logo {
     width: 80px;
   }
 
-  .innerNav {
-    padding: 0 1.5rem;
-  }
-
-  /* .navLinks a {
-    font-size: 1.5rem;
-  } */
-
   footer {
     display: flex;
     flex-direction: column;
-            align-items: flex-start;
+    align-items: flex-start;
     gap: 0.5rem;
   }
 }

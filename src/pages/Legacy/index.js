@@ -9,7 +9,7 @@ import videoGif from '../../images/videoMobile.gif'
 
 function Home(){
     return(
-        <main> 
+        <section> 
         <div className="homecontainer" > 
         <p> bexijoibel.com </p>
         <hr></hr>
@@ -53,7 +53,7 @@ function Home(){
             <p> development: my new discipline </p>
             </div>
         </div>
-        </main>
+        </section>
         
     )
 }

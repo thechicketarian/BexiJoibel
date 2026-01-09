@@ -1,5 +1,7 @@
 .homeWrapper {
-    padding: 1.5rem;
+    display: grid;
+    align-items: center;
+    height: 100vh;
 }
 
 /* Fade + slide up */

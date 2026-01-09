@@ -31,7 +31,7 @@ export default function StudioBXRecipe() {
   }, []);
 
   return (
-    <section className={styles.hero}>
+    <div className={styles.hero}>
       <div className={styles.copy}>
         {/* <h1 className={styles.title}> bx/flo </h1> */}
         <div className={styles.heroLogo}>
@@ -39,10 +39,10 @@ export default function StudioBXRecipe() {
         </div>
         <p className={styles.subtitle}>a bexi joibel castillo experience</p>
 
-        <h2 className={styles.tagline}>
+        <h3 className={styles.tagline}>
           Rooted in product engineering, guided by design intuition, elevated
           through systems‑minded strategy.
-        </h2>
+        </h3>
       </div>
               <div
           style={{
@@ -54,6 +54,6 @@ export default function StudioBXRecipe() {
  <Link to ="about"> About →</Link>
            <Link to ="projects">Projects →</Link>
         </div>
-    </section>
+    </div>
   );
 }
